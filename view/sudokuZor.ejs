@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" type="text/css">
+</head>
+<body>
+    <div id="content" name ="content">
+        <div id="topSide">
+            <div id="selection">
+                Zorluk: <select id="levels">
+                    <option value="62" class="lvls" id="kolay">Kolay</option>
+                    <option value="53" class="lvls" id="orta" >Orta</option>
+                    <option value="44" class="lvls" id="zor" >Zor</option>
+                    <option value="35" class="lvls" id="cok-zor" >Çok Zor</option>
+                    <option value="26" class="lvls" id="uzman" >Uzman</option>
+                    </select>
+            </div>
+            <div id="timer">
+                <div id="spButton" class="fas fa-pause fa-fw"></div>
+                <div id="setTime"><label id="minute">00</label><label id="second">00</label></div>
+            </div>
+        </div>
+        <div name="sudoku">
+            <table id ="sudoku" style="border:4px solid black;">
+                <tr>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                </tr>
+                <tr>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                </tr>
+                <tr style="border-bottom:4px solid black;">
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                </tr>
+                <tr>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                </tr>
+                <tr>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                </tr>
+                <tr style="border-bottom:4px solid black;">
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                </tr>
+                <tr>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                </tr>
+                <tr>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                </tr>
+                <tr>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td style="border-right:4px solid black;"><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                    <td><input class="inputs" type="value"></td>
+                </tr>
+            </table>
+            <div id="gamePause" hidden>
+                <div id="gameContiune">
+                    <div class="fas fa-fw fa-play"></div> 
+                </div>
+            </div>
+            <div id="gameOver" hidden>
+                <p>Tebrikler!</p>
+                <p id="finishTime"></p>
+                <div id="newG"><a id="newGameBtn">Yeni Oyun</a></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var solved_sudoku = [[],[],[],[],[],[],[],[],[]];
+        //create solved puzle
+        function createSolvedPuzle(){
+            solved_sudoku = [[0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0],
+                            [0,0,0,0,0,0,0,0,0]];
+
+            const columnCheck = (row,column,number)=>{
+                for(dcolumn=0;dcolumn<solved_sudoku[0].length;dcolumn++){
+                    if(number==solved_sudoku[row][dcolumn] && dcolumn != column){
+                        colCheck = true;
+                        c = dcolumn;
+                        return c;
+                        
+                    }
+                }
+            };
+
+            const roCheck = (row,column,number)=>{
+                for(drow=0;drow<solved_sudoku.length;drow++){
+                    if(number==solved_sudoku[drow][column] && drow != row){
+                        rowCheck = true;
+                        break;
+                    }
+                }
+            };
+
+            const squCheck = (row,column,number)=>{
+                l1:
+                for(drow = parseInt(row/3)*3;drow<parseInt(row/3)*3+3;drow++){
+                    for(dcolumn = parseInt(column/3)*3;dcolumn<parseInt(column/3)*3+3;dcolumn++){
+                        if(number==solved_sudoku[drow][dcolumn] && drow != row && dcolumn != column){
+                            squareCheck=true;
+                            break l1;
+                        }   
+                    }
+                }
+            };
+        
+            for(var column = 0; column<solved_sudoku[0].length;column++){
+                for(var row = 0; row<solved_sudoku.length;row++){
+                    var check = true;
+                    while(check){
+                        check = false;
+                        var number = parseInt(Math.random()*9+1);
+
+                        var c;
+                        var colCheck = false;
+                        columnCheck(row,column,number);
+                        
+                        var r;
+                        var rowCheck = false;
+                        roCheck(row,column,number);
+
+                        var sq;
+                        var squareCheck = false;
+                        squCheck(row,column,number);
+
+                        if(colCheck == true && rowCheck == false && squareCheck == false && column == 5 && c < parseInt(column/3)*3){
+                            for(zrow = parseInt(row/3)*3; zrow < parseInt(row/3)*3+3;zrow++){
+                                for(zcolumn = parseInt(c/3)*3 ; zcolumn < parseInt(c/3)*3+3;zcolumn++){
+                                    solved_sudoku[zrow][zcolumn] = 0;
+                                }
+                            }
+                          
+                            for(zrow = row; zrow >-1;zrow--){
+                                solved_sudoku[zrow][column]=0;
+                            }
+                           
+                            for(zcolumn = parseInt(c/3)*3 ; zcolumn < parseInt(c/3)*3+3;zcolumn++){
+                                for(zrow = parseInt(row/3)*3; zrow < parseInt(row/3)*3+3;zrow++){
+                                    var check = true;
+                                    while(check){
+                                        check = false;
+                                        var number = parseInt(Math.random()*9+1);
+
+                                        var colCheck = false;
+                                        for(dcolumn=0;dcolumn<solved_sudoku[0].length;dcolumn++){
+                                            if(number==solved_sudoku[zrow][dcolumn] && dcolumn != zcolumn){
+                                                colCheck = true;
+                                                break;
+                                            }
+                                        }
+                                        
+                                        var rowCheck = false;
+                                        roCheck(zrow,zcolumn,number);
+
+                                        var squareCheck = false;
+                                        squCheck(zrow,zcolumn,number);
+
+                                        if(colCheck == true && rowCheck == false){
+                                            for(mrow = parseInt(row/3)*3+2;mrow > -1 ;mrow--){
+                                                solved_sudoku[mrow][zcolumn]=0;
+                                            }
+                                            zrow = 0;
+                                            check = true;
+                                            continue
+                                        }
+                                
+                                        if(colCheck == false && rowCheck == false && squareCheck == false){
+                                            check = false;
+                                        }
+                                        else{
+                                            check = true;
+                                        } 
+                                    }
+                                    solved_sudoku[zrow][zcolumn]=number
+                                }
+                            }
+                            row = 0;
+                            check = true;
+                            continue;
+                        }
+                    
+                        if(colCheck == false && rowCheck == true){
+                            for(zrow = 8;zrow > -1 ;zrow--){
+                                solved_sudoku[zrow][column]=0;
+                            }
+                            row = 0;
+                            check = true;
+                            continue
+                        }
+                
+                        if(colCheck == false && rowCheck == false && squareCheck == false){
+                            check = false;
+                        }
+                        else{
+                            check = true;
+                        }
+
+                    }
+                    solved_sudoku[row][column] = number;
+                }
+            }      
+        }
+
+        //timer side
+        var hour = document.getElementById("hour");
+        var minute = document.getElementById("minute");
+        var second = document.getElementById("second");
+        var totalSeconds = 0;
+
+        function timer(){
+            function pad(val) {
+                var valString = val + "";
+                if(valString.length < 2){
+                    return "0" + valString;
+                }
+                else {
+                    return valString;
+                }
+            }
+            totalSeconds++;
+
+            if(totalSeconds > 60*60 && hour == null){
+                hour = document.createElement("label");
+                hour.id = "hour";
+                
+                var timer = document.getElementById("setTime");
+                timer.prepend(hour);
+            }
+            
+            second.innerHTML = pad(parseInt(totalSeconds%60));
+            minute.innerHTML = pad(parseInt(totalSeconds/60%60));
+            if(hour != null){
+                hour.innerHTML = pad(parseInt(totalSeconds/60/60));
+            }
+        }
+
+        //game and timer start
+        var tmr;
+        window.addEventListener("load", function(){
+            Promise.resolve(createSolvedPuzle()).then(()=>{
+                //check if solve is solid
+                for(var row = 0; row<solved_sudoku.length;row++){
+                    for(var column = 0; column<solved_sudoku[0].length;column++){
+
+                        var colCheck = false;
+                        for(dcolumn=0;dcolumn<solved_sudoku[0].length;dcolumn++){
+                            if(solved_sudoku[row][column]==solved_sudoku[row][dcolumn] && dcolumn != column){
+                                colCheck = true;
+                                break;
+                            }
+                        }
+
+                        var rowCheck = false;
+                        for(drow=0;drow<solved_sudoku.length;drow++){
+                            if(solved_sudoku[row][column]==solved_sudoku[drow][column] && drow != row){
+                                rowCheck = true;
+                                break;
+                            }
+                        }
+
+                        var squareCheck = false;
+                        v1:
+                        for(drow = parseInt(row/3)*3;drow<parseInt(row/3)*3+3;drow++){
+                            for(dcolumn = parseInt(column/3)*3;dcolumn<parseInt(column/3)*3+3;dcolumn++){
+                                if(solved_sudoku[row][column]==solved_sudoku[drow][dcolumn] && drow != row && dcolumn != column){
+                                    squareCheck=true;
+                                    break v1;
+                                }   
+                            }
+                        }
+
+                        if(colCheck == false && rowCheck == false && squareCheck == false){
+                            check = false;
+                        }
+                        else{
+                            console.log("hata var");
+                            solved_sudoku.length = 0;
+                            return 0;
+                        }
+                    }
+                }
+                
+                //delete random row/columns from puzle
+               
+                let puzle = [];
+                puzle = JSON.parse(JSON.stringify(solved_sudoku));
+                var difficulty = solved_sudoku.length*solved_sudoku[0].length - slct[slct.selectedIndex].value;
+                while(difficulty>0){
+                    var row = parseInt(Math.random()*9);
+                    var column = parseInt(Math.random()*9);
+                    if(puzle[row][column] != ''){
+                        puzle[row][column] = '';
+                        difficulty--;
+                    }
+                }
+          
+                //print the game
+                for(var row = 0; row<solved_sudoku.length;row++){
+                    for(var column = 0; column<solved_sudoku[0].length;column++){
+                        document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[column].value = puzle[row][column];
+                        if(puzle[row][column]!=""){
+                            document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[column].readOnly = true;
+                        }
+                    }
+                };
+                console.log(solved_sudoku);
+
+               tmr = setInterval(timer,1000);
+            })
+        });
+        
+        //select/option selected
+        var slct = document.getElementById("levels");
+        slct.addEventListener("change",(event)=>{
+            sessionStorage.setItem('lvl',slct[slct.selectedIndex].id);
+            location= window.location.origin+ "/" + slct[slct.selectedIndex].id;
+        })
+
+        if(sessionStorage.getItem('lvl')){
+            var l = sessionStorage.getItem('lvl');
+            slct.options.namedItem(l).selected = true;
+        }
+        
+        var path = window.location.pathname;
+        switch(path){
+            case '/': case '/kolay':{
+                sessionStorage.setItem('lvl','kolay');
+                var l = sessionStorage.getItem('lvl');
+                slct.options.namedItem(l).selected = true;
+                break
+            }
+            case '/orta':{
+                sessionStorage.setItem('lvl','orta');
+                var l = sessionStorage.getItem('lvl');
+                slct.options.namedItem(l).selected = true;
+                break
+            }
+            case '/zor':{
+                sessionStorage.setItem('lvl','zor');
+                var l = sessionStorage.getItem('lvl');
+                slct.options.namedItem(l).selected = true;
+                break
+            }
+            case '/cok-zor':{
+                sessionStorage.setItem('lvl','cok-zor');
+                var l = sessionStorage.getItem('lvl');
+                slct.options.namedItem(l).selected = true;
+                break
+            }
+            case '/uzman':{
+                sessionStorage.setItem('lvl','uzman');
+                var l = sessionStorage.getItem('lvl');
+                slct.options.namedItem(l).selected = true;
+                break
+            }
+        }
+
+        //game pause stuff
+        document.getElementById("spButton").addEventListener("click",(e)=>{
+            if(e.target.className.match(/(?:^|\s)fa-pause(?!\S)/)){
+                e.target.classList.remove('fa-pause');
+                e.target.classList.add('fa-play');
+                clearInterval(tmr);
+                document.getElementById("gamePause").hidden = false;
+                document.getElementById("sudoku").hidden=true;
+                document.getElementById("gamePause").style.display="flex";
+            }
+            else{
+                if(e.target.className.match(/(?:^|\s)fa-play(?!\S)/)){
+                    e.target.classList.remove('fa-play');
+                    e.target.classList.add('fa-pause');
+                    tmr = setInterval(timer,1000);
+                    document.getElementById("gamePause").hidden = true;
+                    document.getElementById("sudoku").hidden=false;
+                    document.getElementById("gamePause").style.display="none";
+                }
+            }
+        })
+
+        document.getElementById("gamePause").addEventListener("click",()=>{
+            document.getElementById("spButton").classList.remove('fa-play');
+            document.getElementById("spButton").classList.add('fa-pause');;
+            tmr = setInterval(timer,1000);
+            document.getElementById("gamePause").hidden = true;
+            document.getElementById("sudoku").hidden=false;
+            document.getElementById("gamePause").style.display="none";
+        })
+
+        document.getElementById("newGameBtn").addEventListener("click",()=>{
+            location = window.location;
+        })
+
+        //game css stuff
+        document.querySelectorAll(".inputs").forEach(item =>{
+            item.maxLength = 1;
+            item.pattern
+            item.addEventListener("focusin",(event)=>{
+                for(i = 0;i<solved_sudoku.length;i++){
+                    for(j = 0;j<solved_sudoku[0].length;j++){
+                        if(event.target.value == document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j].value){
+                            event.target.style.backgroundColor ="rgb(49, 219, 162)" 
+                            if(event.target.value != ""){
+                                document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j].style.backgroundColor="rgb(51, 172, 131)";
+                                event.target.style.backgroundColor ="rgb(49, 219, 162)"
+                            }
+                        }
+                        if(event.target == document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j]){
+                            for(column = 0; column<solved_sudoku[0].length;column++){
+                                document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[column].style.backgroundColor ="rgb(71, 245, 187, 0.250)";
+                                event.target.style.backgroundColor = "rgb(49, 219, 162)";
+                                if(event.target.value == document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[column].value && event.target.value != ""){
+                                    document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[column].style.backgroundColor="rgb(51, 172, 131)";
+                                    event.target.style.backgroundColor ="rgb(49, 219, 162)"
+                                }
+                            }
+                            for(row = 0; row<solved_sudoku[0].length;row++){
+                                document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[j].style.backgroundColor ="rgb(71, 245, 187, 0.250)";
+                                event.target.style.backgroundColor = "rgb(49, 219, 162)";
+                                if(event.target.value == document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[j].value && event.target.value != ""){
+                                    document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[j].style.backgroundColor="rgb(51, 172, 131)";
+                                    event.target.style.backgroundColor ="rgb(49, 219, 162)"
+                                }
+                            }
+                            for(row = parseInt(i/3)*3;row<parseInt(i/3)*3+3;row++){
+                                for(column = parseInt(j/3)*3;column<parseInt(j/3)*3+3;column++){
+                                    document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[column].style.backgroundColor ="rgb(71, 245, 187, 0.250)";
+                                    event.target.style.backgroundColor = "rgb(49, 219, 162)";
+                                    if(event.target.value == document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[column].value && event.target.value != ""){
+                                        document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[column].style.backgroundColor="rgb(51, 172, 131)";
+                                        event.target.style.backgroundColor ="rgb(49, 219, 162)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                event.target.setSelectionRange(0, event.target.value.length)
+            });
+            item.addEventListener("focusout",(event)=>{
+                for(i = 0;i<solved_sudoku.length;i++){
+                    for(j = 0;j<solved_sudoku[0].length;j++){
+                        event.target.style.backgroundColor ="rgb(255,255,255)"
+                        if(event.target.value == document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j].value ){
+                            if(event.target.value != ""){
+                                document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j].style.backgroundColor="rgb(255,255,255)";
+                            }
+                        }
+                        if(event.target == document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j]){
+                            for(column = 0; column<solved_sudoku[0].length;column++){
+                                document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[column].style.backgroundColor ="rgb(255,255,255)";
+                            }
+                            for(row = 0; row<solved_sudoku[0].length;row++){
+                                document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[j].style.backgroundColor ="rgb(255,255,255)";
+                            }
+                            for(row = parseInt(i/3)*3;row<parseInt(i/3)*3+3;row++){
+                                for(column = parseInt(j/3)*3;column<parseInt(j/3)*3+3;column++){
+                                    document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[column].style.backgroundColor ="rgb(255,255,255)";
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            item.addEventListener("input",(event)=>{
+                var numberOnly = /[1-9]|\./;
+                if(!numberOnly.test(event.target.value)){
+                    event.target.style.backgroundColor = "rgb(49, 219, 162)";
+                    event.target.value="";
+                }
+                
+                for(i = 0;i<solved_sudoku.length;i++){
+                    for(j = 0;j<solved_sudoku[0].length;j++){
+                        if(event.target.value == document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j].value){
+                            
+                            if(event.target.value != ""){
+                                document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j].style.backgroundColor="rgb(51, 172, 131)";
+                            }
+                            event.target.style.backgroundColor ="rgb(49, 219, 162)"
+                        }
+                        if(event.target == document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j]){
+                            if(event.target.value != "" && event.target.value != solved_sudoku[i][j]){
+                                event.target.style.color = "red";
+                            }
+                            if(event.target.value != "" && event.target.value == solved_sudoku[i][j]){
+                                event.target.style.color = "blue";
+                            }
+                            if(event.target.value == ""){
+                                event.target.style.color = "unset";
+                            }
+                        }
+
+                        var count = 0;
+                        for(row = 0;row<solved_sudoku.length;row++){
+                            for(column = 0;column<solved_sudoku[0].length;column++){
+                                if(document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[column].value == solved_sudoku[row][column]){
+                                    ++count;
+                                    if(count==solved_sudoku.length*solved_sudoku[0].length){
+                                        document.getElementById("sudoku").hidden = true;
+                                        document.getElementById("gameOver").hidden = false;
+                                        document.getElementById("gameOver").style.display ="flex";
+                                        clearInterval(tmr);
+                                        var hour = document.getElementById("hour");
+                                        if(hour != null){
+                                            hour = hour.innerHTML;
+                                        }
+                                        var minute = document.getElementById("minute").innerHTML;
+                                        var second = document.getElementById("second").innerHTML;
+                                        document.getElementsByName("sudoku")[0].removeChild(document.getElementById("sudoku"));
+                                        document.getElementsByName("sudoku")[0].removeChild(document.getElementById("gamePause"))
+                                        if(hour != null){
+                                            document.getElementById("finishTime").innerHTML = "Bitirme Süresi: " + hour+":" + minute+":" + second;
+                                        }
+                                        else{
+                                            document.getElementById("finishTime").innerHTML = "Bitirme Süresi: " + minute+":" + second;
+                                        }
+                                               
+                                    }
+                                }
+                                else{
+                                    count = 0;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                event.target.setSelectionRange(0, event.target.value.length)
+            });
+            item.addEventListener("keydown",(event)=>{
+                var numberOnly = /[1-9]|\./;
+                if(numberOnly.test(event.target.value)){
+                    event.target.style.backgroundColor = "rgb(49, 219, 162)";
+                }
+               
+                for(i = 0;i<solved_sudoku.length;i++){
+                    for(j = 0;j<solved_sudoku[0].length;j++){
+                        if(event.target.value !=""){
+                            if(event.target.value == document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j].value){
+                                document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j].style.backgroundColor="white";  
+                            }
+                        }
+                    }
+                }
+                for(i = 0;i<solved_sudoku.length;i++){
+                    for(j = 0;j<solved_sudoku[0].length;j++){
+                        if(event.target.value !=""){
+                            if(event.target == document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[j]){
+                                for(column = 0; column<solved_sudoku[0].length;column++){
+                                    document.getElementsByTagName("tr")[i].getElementsByClassName("inputs")[column].style.backgroundColor ="rgb(71, 245, 187, 0.250)";
+                                }
+                                for(row = 0; row<solved_sudoku[0].length;row++){
+                                    document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[j].style.backgroundColor ="rgb(71, 245, 187, 0.250)";
+                                }
+                                for(row = parseInt(i/3)*3;row<parseInt(i/3)*3+3;row++){
+                                    for(column = parseInt(j/3)*3;column<parseInt(j/3)*3+3;column++){
+                                        document.getElementsByTagName("tr")[row].getElementsByClassName("inputs")[column].style.backgroundColor ="rgb(71, 245, 187, 0.250)";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+
+        
+    </script>
+</body>
+</html>

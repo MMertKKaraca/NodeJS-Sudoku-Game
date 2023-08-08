@@ -1,0 +1,133 @@
+#content{
+    margin: 0 auto;
+    width: 568px;
+    align-items: center;
+    padding-top: 50px;
+}
+
+input{
+    width: 54px;
+    height: 54px;
+    font-size:x-large;
+    text-align:center;
+    border: none;
+    outline-style: none;
+    caret-color: transparent;
+    cursor:default;
+
+}
+
+input::selection{
+    background-color: unset;
+}
+
+#topSide{
+    padding: 20px 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+table,tr,td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    background-color: rgba(231, 228, 228, 0.829);
+}
+
+#selection,#selection select{
+    font-size: 18px;
+    padding-top: 3px;
+}
+#selection option{
+    height: 25px;
+    width: auto;
+    font-size: 18px;
+}
+
+#timer{
+    position: relative;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+    
+}
+#setTime{
+    margin-left: 10px;
+    padding-top: 7px;
+}
+#spButton{
+    border-radius: 10px;
+    background-color: rgb(209, 209, 209);
+    font-size: 1.8em;
+    padding-top: 3px;
+
+
+}
+#spButton:hover{
+    background-color: rgb(156, 156, 156);
+    cursor: pointer;
+}
+
+#minute::after{
+    content: ":";
+}
+#hour::after{
+    content: ":";
+}
+
+#gameOver{
+    background-color: #777777;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+    transition: 2s;
+    height: 550px;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+#gamePause{
+    background-color: #777777;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+}
+#gameContiune{
+    text-align: center;
+    font-size: 100px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+#gamePause:hover{
+    cursor: pointer;
+}
+#newGameBtn{
+    padding: 20px;
+}
+#newGameBtn:hover{
+    background-color: rgb(156, 156, 156);
+    cursor: pointer;
+}
+#newG{
+    margin: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+    input {
+      width: 40px;
+      height: 40px;
+    }
+    #content{
+        width: 442px;
+        /*color:rgb(49, 219, 162)*/
+    }
+  }
+
+
